@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const LEAGUE_URL = 'http://tinamar.api.jazbelt.net/league'
+const LEAGUE_URL = '/api/league'
 
 export const state = () => ({
   league: []
@@ -11,15 +11,15 @@ export const getters = {
 }
 
 export const mutations = {
-  setLeague: (state, league) => {
+  setLeague(state, league) {
     state.league = league
   }
 }
 
 export const actions = {
-  loadLeague: ({ commit }) => {
+  loadLeague({ commit }) {
     axios.get(LEAGUE_URL).then((r) => {
-      commit('setLeage', r.data)
+      commit('setLeague', r.data)
     })
   }
 }
