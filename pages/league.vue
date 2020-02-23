@@ -16,7 +16,7 @@
       <tbody>
         <tr
           v-for="team in league"
-          :key="team.id"
+          :key="team.pos"
           :class="{ highlighted: team.name === 'Veteranos Bandama' }"
         >
           <td>{{ team.pos }}</td>
