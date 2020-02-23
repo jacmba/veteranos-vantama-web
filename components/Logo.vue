@@ -1,5 +1,5 @@
 <template>
-  <img src="/escudo_bandama.jpg" />
+  <b-img src="/escudo_bandama.png" fluid />
 </template>
 <style>
 .NuxtLogo {

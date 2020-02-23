@@ -1,16 +1,9 @@
 <template>
   <div class="container">
     <div>
+      <NavigationBar></NavigationBar>
       <logo />
-      <h1 class="title">
-        Veteranos Bandama
-      </h1>
-      <h2 class="subtitle">
-        Web del club de fútbol Veteranos Bandama
-      </h2>
-      <h3>
-        ESTAMOS EN OBRAS!!!
-      </h3>
+      <carrousel />
       <div class="links">
         <a
           href="http://ligatinamar.com/category/once_veteranos_38b"
@@ -20,16 +13,21 @@
           Sigue aquí la liga Tinamar Panadería pulido +38B
         </a>
       </div>
+      <br /><br />
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import NavigationBar from '~/components/NavigationBar'
+import Carrousel from '~/components/Carrousel'
 
 export default {
   components: {
-    Logo
+    Logo,
+    NavigationBar,
+    Carrousel
   }
 }
 </script>
