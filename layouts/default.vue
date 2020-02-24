@@ -28,20 +28,23 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  width: 100%;
 }
 
 body {
   vertical-align: top;
+  width: 100%;
 }
 
 .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center top;
+  justify-content: center;
   align-items: center top;
-  text-align: center top;
+  text-align: center;
   vertical-align: top;
+  min-width: 90%;
 }
 
 .title {
