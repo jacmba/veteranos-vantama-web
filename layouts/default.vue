@@ -30,13 +30,18 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  vertical-align: top;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: center top;
+  align-items: center top;
+  text-align: center top;
+  vertical-align: top;
 }
 
 .title {
