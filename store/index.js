@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const LEAGUE_URL = 'http://tinamar.api.jazbelt.net/league'
+const LEAGUE_URL = 'https://api.jazbelt.net/league'
 
 export const state = () => ({
   league: []

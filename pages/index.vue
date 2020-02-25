@@ -4,7 +4,7 @@
     <carrousel />
     <div class="links">
       <a
-        href="http://ligatinamar.com/category/once_veteranos_38b"
+        href="https://ligatinamar.com/category/once_veteranos_38b"
         target="_blank"
         class="button--green"
       >
