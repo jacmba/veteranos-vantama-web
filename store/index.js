@@ -35,6 +35,7 @@ const parseDate = (x) => {
   x.date = m.format('DD-MM-YYYY')
   x.time = m.format('HH:mm')
   x.week = WEEKDAYS[m.weekday()]
+  return x
 }
 
 /**
@@ -63,7 +64,8 @@ export const getters = {
   league: (state) => state.league,
   results: (state) => gamesReducer(state.results),
   fixtures: (state) => gamesReducer(state.fixtures),
-  nextGame: (state) => state.fixtures.filter((x) => isBandama(x))[0]
+  nextGame: (state) =>
+    state.fixtures.filter((x) => isBandama(x)).map(parseDate)[0]
 }
 
 export const mutations = {
