@@ -104,4 +104,8 @@ body {
   color: #fff;
   background-color: #35495e;
 }
+
+.highlighted {
+  background-color: chartreuse;
+}
 </style>
