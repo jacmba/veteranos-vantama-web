@@ -1,5 +1,5 @@
 <template>
-  <div v-if="nextGame !== undefined">
+  <div v-if="nextGame">
     <p>
       <b-card title="¡¡ Próximo partido del Bandama !!">
         <b-card-body>

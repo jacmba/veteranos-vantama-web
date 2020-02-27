@@ -2,7 +2,7 @@
   <div v-if="position">
     <p>
       <b-card title="Posición en liga +38 B">
-        {{ position.position }} de {{ position.teams }}
+        <h4>{{ position.position }} de {{ position.teams }}</h4>
       </b-card>
     </p>
   </div>

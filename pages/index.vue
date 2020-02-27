@@ -3,6 +3,7 @@
     <br />
     <nextGame />
     <position />
+    <lastResult />
     <carrousel />
     <logo />
     <div class="links">
@@ -23,13 +24,15 @@ import Logo from '~/components/Logo.vue'
 import Carrousel from '~/components/Carrousel'
 import NextGame from '~/components/NextGame'
 import Position from '~/components/Position'
+import LastResult from '~/components/LastResult'
 
 export default {
   components: {
     Logo,
     Carrousel,
     NextGame,
-    Position
+    Position,
+    LastResult
   }
 }
 </script>

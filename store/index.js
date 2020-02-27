@@ -75,7 +75,7 @@ export const getters = {
     }
   },
   lastResult: (state) => {
-    const res = state.results.filter(isBandama)
+    const res = state.results.filter(isBandama).map(parseDate)
     return res[res.length - 1]
   }
 }
