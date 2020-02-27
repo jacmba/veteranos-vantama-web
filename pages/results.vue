@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Resultados de partidos</h1>
     <p v-for="round in results" :key="round">
       <b-card :title="'Jornada ' + round[0].round">
         <b-card-body>
@@ -8,9 +9,7 @@
               v-for="game in round"
               :key="game.datetime"
               :class="{
-                highlighted: [game.home_team, game.away_team].includes(
-                  'Veteranos Bandama'
-                )
+                highlighted: game.isBandama
               }"
             >
               {{ game.home_team }} <b>{{ game.home_score }}</b> -

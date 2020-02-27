@@ -3,7 +3,9 @@ import moment from 'moment'
 
 const LEAGUE_URL = 'https://api.jazbelt.net/league'
 const RESULTS_URL = LEAGUE_URL + '/results'
-const FIXTURES_URL = LEAGUE_URL + '/fixtures'
+const FIXTURES_URL = LEAGUE_URL + '/calendar'
+
+const BANDAMA_EXP = /veteranos.*bandama/gi
 
 export const state = () => ({
   league: [],
@@ -23,6 +25,8 @@ const gamesReducer = (games) => {
     const m = moment(x.datetime)
     x.date = m.format('DD-MM-YYYY')
     x.time = m.format('HH:mm')
+    x.week = m.weekday()
+    x.isBandama = BANDAMA_EXP.test(x.home_team) || BANDAMA_EXP.test(x.away_team)
 
     if (p[x.round]) {
       p[x.round] = [...p[x.round], x]
