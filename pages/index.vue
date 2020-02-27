@@ -1,7 +1,8 @@
 <template>
   <div>
-    <logo />
+    <nextGame />
     <carrousel />
+    <logo />
     <div class="links">
       <a
         href="https://ligatinamar.com/category/once_veteranos_38b"
@@ -18,11 +19,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import Carrousel from '~/components/Carrousel'
+import NextGame from '~/components/NextGame'
 
 export default {
   components: {
     Logo,
-    Carrousel
+    Carrousel,
+    NextGame
   }
 }
 </script>

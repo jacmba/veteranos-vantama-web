@@ -7,6 +7,16 @@ const FIXTURES_URL = LEAGUE_URL + '/calendar'
 
 const BANDAMA_EXP = /veteranos.*bandama/gi
 
+const WEEKDAYS = [
+  'Lunes',
+  'Martes',
+  'Miércoles',
+  'Jueves',
+  'Viernes',
+  'Sábado',
+  'Domingo'
+]
+
 export const state = () => ({
   league: [],
   leagueSet: false,
@@ -16,17 +26,25 @@ export const state = () => ({
   fixturesSet: false
 })
 
+const isBandama = (x) => {
+  return BANDAMA_EXP.test(x.home_team) || BANDAMA_EXP.test(x.away_team)
+}
+
+const parseDate = (x) => {
+  const m = moment(x.datetime)
+  x.date = m.format('DD-MM-YYYY')
+  x.time = m.format('HH:mm')
+  x.week = WEEKDAYS[m.weekday()]
+}
+
 /**
  * Group games by round
  * @param {array} games - List of game objects
  */
 const gamesReducer = (games) => {
   const rounds = games.reduce((p, x) => {
-    const m = moment(x.datetime)
-    x.date = m.format('DD-MM-YYYY')
-    x.time = m.format('HH:mm')
-    x.week = m.weekday()
-    x.isBandama = BANDAMA_EXP.test(x.home_team) || BANDAMA_EXP.test(x.away_team)
+    parseDate(x)
+    x.isBandama = isBandama(x)
 
     if (p[x.round]) {
       p[x.round] = [...p[x.round], x]
@@ -44,7 +62,8 @@ const gamesReducer = (games) => {
 export const getters = {
   league: (state) => state.league,
   results: (state) => gamesReducer(state.results),
-  fixtures: (state) => gamesReducer(state.fixtures)
+  fixtures: (state) => gamesReducer(state.fixtures),
+  nextGame: (state) => state.fixtures.filter((x) => isBandama(x))[0]
 }
 
 export const mutations = {
