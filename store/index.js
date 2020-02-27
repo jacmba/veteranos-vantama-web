@@ -64,8 +64,20 @@ export const getters = {
   league: (state) => state.league,
   results: (state) => gamesReducer(state.results),
   fixtures: (state) => gamesReducer(state.fixtures),
-  nextGame: (state) =>
-    state.fixtures.filter((x) => isBandama(x)).map(parseDate)[0]
+  nextGame: (state) => state.fixtures.filter(isBandama).map(parseDate)[0],
+  position: (state) => {
+    const bandama = state.league.filter((x) => BANDAMA_EXP.test(x.name))[0]
+    if (bandama) {
+      return {
+        teams: state.league.length,
+        position: bandama.pos
+      }
+    }
+  },
+  lastResult: (state) => {
+    const res = state.results.filter(isBandama)
+    return res[res.length - 1]
+  }
 }
 
 export const mutations = {

@@ -1,6 +1,8 @@
 <template>
   <div>
+    <br />
     <nextGame />
+    <position />
     <carrousel />
     <logo />
     <div class="links">
@@ -20,12 +22,14 @@
 import Logo from '~/components/Logo.vue'
 import Carrousel from '~/components/Carrousel'
 import NextGame from '~/components/NextGame'
+import Position from '~/components/Position'
 
 export default {
   components: {
     Logo,
     Carrousel,
-    NextGame
+    NextGame,
+    Position
   }
 }
 </script>
