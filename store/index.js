@@ -74,10 +74,7 @@ export const getters = {
       }
     }
   },
-  lastResult: (state) => {
-    const res = state.results.filter(isBandama).map(parseDate)
-    return res[res.length - 1]
-  },
+  lastResult: (state) => state.results.filter(isBandama).map(parseDate)[0],
   isLeagueLoaded: (state) => state.leagueSet,
   isResultsLoaded: (state) => state.resultsSet,
   isFixturesLoaded: (state) => state.fixturesSet
