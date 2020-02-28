@@ -6,20 +6,55 @@ export default {
   head: {
     title: 'Veteranos Bandama',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Club de amigos Veteranos Bandama'
+      },
+      {
+        name: 'image',
+        description: 'https://www.veteranosbandama.com/escudo_bandama.png'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Club de amigos Veteranos Bandama'
+      },
+      {
+        name: 'og:image',
+        description: 'https://www.veteranosbandama.com/escudo_bandama.png'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Club de amigos Veteranos Bandama'
+      },
+      {
+        name: 'twitter:image',
+        description: 'https://www.veteranosbandama.com/escudo_bandama.png'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fff'
+  },
   /*
    ** Global CSS
    */

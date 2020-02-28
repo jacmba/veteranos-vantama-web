@@ -1,5 +1,12 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="primary" fixed="top" sticky>
+  <b-navbar
+    toggleable="md"
+    type="dark"
+    variant="primary"
+    fixed="top"
+    sticky
+    width="100%"
+  >
     <b-img src="/escudo_bandama.png" width="32" />
     <b-navbar-brand href="/">Veteranos Bandama</b-navbar-brand>
     <b-navbar-nav class="ml-auto">

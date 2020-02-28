@@ -22,6 +22,8 @@
         <br />
       </b-card>
     </p>
+
+    <loadSpinner v-if="!isResultsLoaded"></loadSpinner>
     <br />
     <logo />
   </div>
@@ -30,13 +32,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import Logo from '~/components/Logo'
+import LoadSpinner from '~/components/LoadSpinner'
 
 export default {
   components: {
-    Logo
+    Logo,
+    LoadSpinner
   },
   computed: {
-    ...mapGetters(['results'])
+    ...mapGetters(['results', 'isResultsLoaded'])
   },
 
   mounted() {

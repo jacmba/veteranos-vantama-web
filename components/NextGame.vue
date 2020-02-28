@@ -1,7 +1,7 @@
 <template>
-  <div v-if="nextGame">
+  <div>
     <p>
-      <b-card title="¡¡ Próximo partido del Bandama !!">
+      <b-card v-if="isFixturesLoaded" title="¡¡ Próximo partido del Bandama !!">
         <b-card-body>
           El {{ nextGame.week }} {{ nextGame.date }} a las
           {{ nextGame.time }} en
@@ -9,16 +9,21 @@
           <h3>{{ nextGame.home_team }} contra {{ nextGame.away_team }}</h3>
         </b-card-body>
       </b-card>
+      <loadSpinner v-else></loadSpinner>
     </p>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import LoadSpinner from '~/components/LoadSpinner'
 
 export default {
+  components: {
+    LoadSpinner
+  },
   computed: {
-    ...mapGetters(['nextGame'])
+    ...mapGetters(['nextGame', 'isFixturesLoaded'])
   },
 
   mounted() {

@@ -34,7 +34,7 @@ const parseDate = (x) => {
   const m = moment(x.datetime)
   x.date = m.format('DD-MM-YYYY')
   x.time = m.format('HH:mm')
-  x.week = WEEKDAYS[m.weekday()]
+  x.week = WEEKDAYS[m.weekday() - 1]
   return x
 }
 
@@ -77,7 +77,10 @@ export const getters = {
   lastResult: (state) => {
     const res = state.results.filter(isBandama).map(parseDate)
     return res[res.length - 1]
-  }
+  },
+  isLeagueLoaded: (state) => state.leagueSet,
+  isResultsLoaded: (state) => state.resultsSet,
+  isFixturesLoaded: (state) => state.fixturesSet
 }
 
 export const mutations = {

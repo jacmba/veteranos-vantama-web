@@ -1,15 +1,15 @@
 <template>
   <div>
     <h2>Clasificación liga veteranos +38B</h2>
-    <table width="100%">
+    <table v-if="isLeagueLoaded" width="100%">
       <thead>
         <th>Puesto</th>
         <th>Equipo</th>
         <th>Puntos</th>
-        <th>Partidos</th>
-        <th>Victorias</th>
-        <th>Empates</th>
-        <th>Derrotas</th>
+        <th>PJ</th>
+        <th>PG</th>
+        <th>PE</th>
+        <th>PP</th>
         <th>GF</th>
         <th>GC</th>
       </thead>
@@ -31,6 +31,8 @@
         </tr>
       </tbody>
     </table>
+
+    <loadSpinner v-if="!isLeagueLoaded"></loadSpinner>
     <logo />
   </div>
 </template>
@@ -38,13 +40,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import Logo from '~/components/Logo'
+import LoadSpinner from '~/components/LoadSpinner'
 
 export default {
   components: {
-    Logo
+    Logo,
+    LoadSpinner
   },
   computed: {
-    ...mapGetters(['league'])
+    ...mapGetters(['league', 'isLeagueLoaded'])
   },
   mounted() {
     this.$store.dispatch('loadLeague')

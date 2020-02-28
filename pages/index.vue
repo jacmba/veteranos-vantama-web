@@ -10,7 +10,7 @@
       <a
         href="https://ligatinamar.com/category/once_veteranos_38b"
         target="_blank"
-        class="button--green"
+        class="button--blue"
       >
         Sigue aquí la liga Tinamar Panadería pulido +38B
       </a>
