@@ -1,7 +1,11 @@
 <template>
   <div>
     <br />
-    <nextGame />
+    <video controls autoplay>
+      <source src="bandama.mp4" type="video/mp4" />
+      Su navegador no soporta vídeo
+    </video>
+    <!-- nextGame / -->
     <position />
     <lastResult />
     <carrousel />
@@ -22,7 +26,7 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import Carrousel from '~/components/Carrousel'
-import NextGame from '~/components/NextGame'
+// import NextGame from '~/components/NextGame'
 import Position from '~/components/Position'
 import LastResult from '~/components/LastResult'
 
@@ -30,9 +34,16 @@ export default {
   components: {
     Logo,
     Carrousel,
-    NextGame,
+    // NextGame,
     Position,
     LastResult
   }
 }
 </script>
+
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+}
+</style>
